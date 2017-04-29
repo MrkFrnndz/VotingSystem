@@ -1,6 +1,5 @@
 package com.example.programmer2.votingsystem;
 
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -60,7 +59,7 @@ public class VoteActivity extends AppCompatActivity{
                 bundle.putInt("VOTECOUNT", candidatelist.get(position).getVoteCount());
                 vcDialogFrag.setArguments(bundle);
 
-                vcDialogFrag.show(getFragmentManager(),"My Dialog Fragment");
+                vcDialogFrag.show(getSupportFragmentManager(),"My Dialog Fragment");
                 vcDialogFrag.getFragmentManager().executePendingTransactions();
             }
         });

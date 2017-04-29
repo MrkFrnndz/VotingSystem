@@ -1,10 +1,10 @@
 package com.example.programmer2.votingsystem;
 
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,20 +27,20 @@ public class VoteConfirmationFragment extends DialogFragment {
     public VoteConfirmationFragment() {
     }
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof Activity){
-//            activity = getActivity();
-//        }
-//    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Activity){
+            activity = getActivity();
+        }
+    }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.voteconfirmation_fragment, container, false);
 
-        sqLiteHelper = new SQLiteHelper(getActivity());
+        sqLiteHelper = new SQLiteHelper(activity);
 
         Bundle bundle = this.getArguments();
 //
